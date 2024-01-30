@@ -14,9 +14,9 @@
     <cfinclude template="horizontalnav.cfm" />
     <div id="maincontent" class="row">
         <cfinclude template="carousel.cfm" /> 
-        <cfinclude template=”genrenav.cfm” />
+        <cfinclude template="genrenav.cfm" />
     </div>
-    <cfinclude template=”footer.cfm” />
+    <cfinclude template="footer.cfm" />
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
