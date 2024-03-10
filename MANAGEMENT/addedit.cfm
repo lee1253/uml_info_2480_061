@@ -21,10 +21,32 @@
 <cffunction name="mainForm">
     <cfoutput>
         <form action="#cgi.script_name#?tool=addedit" method="post">
-            <label for="isbn13">ISBN13:</label>
-            <input type="text" id="isbn13" name="isbn13" value="" placeholder="ISBN13" /><br>
-            <label for="title">Book Title:</label>
-            <input type="text" id="title" name="title" placeholder="Book Title"/><br>
+            <div class="form-floating mb-3">
+                <input type="text" id="isbn13" name="isbn13" class="form-control" value="" placeholder="ISBN13">
+                <label for="isbn13">ISBN13:</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" id="title" name="title" class="form-control" placeholder="Book Title">
+                <label for="title">Book Title:</label>
+            </div>
+            <!-- New text inputs -->
+            <div class="form-floating mb-3">
+                <input type="text" id="year" name="year" class="form-control" placeholder="Year">
+                <label for="year">Year:</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" id="weight" name="weight" step=".1" class="form-control" placeholder="Weight">
+                <label for="weight">Weight:</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" id="isbn" name="isbn" class="form-control" placeholder="ISBN">
+                <label for="isbn">ISBN:</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" id="pages" name="pages" class="form-control" placeholder="Pages">
+                <label for="pages">Pages:</label>
+            </div>
+            <!-- Submit button -->
             <button type="submit" class="btn btn-primary">Add Book</button>
         </form>
     </cfoutput>
