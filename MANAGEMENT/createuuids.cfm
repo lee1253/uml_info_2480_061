@@ -1,7 +1,7 @@
-<ul>
+<ul> 
     <cfoutput>
-        <cfloop from=”1” to=”20” index=”I”>
-            <li>#createuuid()#</li>
-        </cfloop>
-    </cfoutput>
+        <cfloop from="1" to="20" index="I">
+            <input type="text" value="#createuuid()#" style="width:50%" /><br/>
+        </cfloop> 
+    </cfoutput> 
 </ul>
