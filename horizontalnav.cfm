@@ -23,26 +23,28 @@
                         <a class="nav-link" href="#cgi.SCRIPT_NAME#?p=content&id=3">Events</a>
                     </li>
             </ul>
-                <form class="d-flex" action="#cgi.script_name#?p=details" method="post">
-                    <input class="form-control me-2" type="search" name="searchme" placeholder="Search" aria-label="Search">                
-                    <button class="btn btn-outline-success" type="submit">Search</button>            
-                </form> 
+            <form class="d-flex" action="#cgi.script_name#?p=details" method="post">
+                <input class="form-control me-2" type="search" name="searchme" placeholder="Search" aria-label="Search">                
+                <button class="btn btn-outline-success" type="submit">Search</button>            
+            </form> 
             <ul class="navbar-nav mr-auto">
-                    <cfif session.user.isloggedin> 
-                         <li class="nav-item">
-                             <span class="nav-link">Welcome #session.user.firstname#</a>
-                         </li>
-                         <li class="nav-item">
-                            <a href="#cgi.SCRIPT_NAME#?p=logoff " class="nav-link">logout</a>
-                         </li>
-                    <cfelse>    
-                        <li class="nav-item">
-                            <a href="#cgi.SCRIPT_NAME#?p=login" class="nav-link">Login</a>
-                        </li>
-                     </cfif>
-                        <li class="nav-item">
-                            <a href="management/index.cfm?tool=addEdit" class="nav-link">Management</a>
-                        </li>
+                <!-- Safety check for session.user existence before accessing isloggedin -->
+                <cfif structKeyExists(session, "user") and session.user.isloggedin> 
+                     <li class="nav-item">
+                         <!-- Corrected closing tag from </a> to </span> -->
+                         <span class="nav-link">Welcome #session.user.firstname#</span>
+                     </li>
+                     <li class="nav-item">
+                        <a href="#cgi.SCRIPT_NAME#?p=logoff" class="nav-link">Logout</a>
+                     </li>
+                <cfelse>    
+                    <li class="nav-item">
+                        <a href="#cgi.SCRIPT_NAME#?p=login" class="nav-link">Login</a>
+                    </li>
+                 </cfif>
+                    <li class="nav-item">
+                        <a href="management/index.cfm?tool=addEdit" class="nav-link">Management</a>
+                    </li>
             </ul>
         </div>
     </nav>
