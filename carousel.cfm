@@ -7,28 +7,16 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="images/dog_man_1.jpg" class="d-block w-100 " alt="..."
+                <img src="images/book_on_pie.jpg" class="d-block w-100 " alt="..."
                      style="width:65% !important; margin-left:auto;margin-right:auto">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Dog Man: A Graphic Novel</h5>
-                    <p>Dog Man #1</p>
-                </div>
             </div>
             <div class="carousel-item">
-                <img src="images/book_on_pie.jpg" class="d-block w-100" alt="..."
+                <img src="images/dog_man_1.jpg" class="d-block w-100" alt="..."
                      style="width:65% !important; margin-left:auto;margin-right:auto">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>The Book On Pie</h5>
-                    <p>Everything You Need to Know to Bake Perfect Pies</p>
-                </div>
             </div>
             <div class="carousel-item">
                 <img src="images/pokemon_crochet.jpg" class="d-block w-100" alt="..."
                      style="width:65% !important; margin-left:auto;margin-right:auto">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Pokémon Crochet</h5>
-                    <p>Bring your favorite Pokémon to life with 20 cute crochet patterns</p>
-                </div>
             </div>
             <div class="carousel-item">
                 <h3 class="col-lg-offset-2">Store Hours</h3>
