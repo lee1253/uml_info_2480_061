@@ -8,15 +8,15 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="images/book_on_pie.jpg" class="d-block w-100 " alt="..."
-                     style="width:65% !important; margin-left:auto;margin-right:auto">
+                     style="width:35% !important; margin-left:auto;margin-right:auto">
             </div>
             <div class="carousel-item">
                 <img src="images/dog_man_1.jpg" class="d-block w-100" alt="..."
-                     style="width:65% !important; margin-left:auto;margin-right:auto">
+                     style="width:30% !important; margin-left:auto;margin-right:auto">
             </div>
             <div class="carousel-item">
                 <img src="images/pokemon_crochet.jpg" class="d-block w-100" alt="..."
-                     style="width:65% !important; margin-left:auto;margin-right:auto">
+                     style="width:35% !important; margin-left:auto;margin-right:auto">
             </div>
             <div class="carousel-item">
                 <h3 class="col-lg-offset-2">Store Hours</h3>
