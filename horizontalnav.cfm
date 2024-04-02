@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#cgi.SCRIPT_NAME#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#cgi.SCRIPT_NAME#">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#cgi.SCRIPT_NAME#?p=content&id=1">Store Information</a>
@@ -28,10 +28,8 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>            
             </form> 
             <ul class="navbar-nav mr-auto">
-                <!-- Safety check for session.user existence before accessing isloggedin -->
                 <cfif structKeyExists(session, "user") and session.user.isloggedin> 
                      <li class="nav-item">
-                         <!-- Corrected closing tag from </a> to </span> -->
                          <span class="nav-link">Welcome #session.user.firstname#</span>
                      </li>
                      <li class="nav-item">
@@ -43,7 +41,7 @@
                     </li>
                  </cfif>
                     <li class="nav-item">
-                        <a href="management/index.cfm?tool=addEdit" class="nav-link">Management</a>
+                        <a href="management/index.cfm?tool=addedit" class="nav-link">Management</a>
                     </li>
             </ul>
         </div>
