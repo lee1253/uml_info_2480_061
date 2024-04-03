@@ -20,6 +20,7 @@
     </cfcatch>
 </cftry>
 
+<!--- This is the main inventory form --->
 <cffunction name="mainForm"> 
 
     <cfset var thisBookDetails = addEditFunctions.bookDetails(book) />
@@ -92,6 +93,8 @@
             </div>
             <div>
                 <h4>Genres</h4>
+                <!--- This is an addition that allows all checkboxes to be unchecked and a 
+                    genre value which will return no values to be submitted to the system --->
                 <input type="hidden" name="genre" value="0" />
 
                 
@@ -119,6 +122,7 @@
     </cfoutput> 
 </cffunction>
 
+<!--- This handles the side navigation where we choose a book to edit --->
 <cffunction name="sideNav">
     <cfset findBookForm()> 
     <cfset allbooks = addEditFunctions.sideNavBooks( qterm )>  
