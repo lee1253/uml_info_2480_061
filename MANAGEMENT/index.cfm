@@ -1,3 +1,10 @@
+<!--- The Management section is for the employees of the store to manage inventory and other items. --->
+<!--- This is the security that would kick in in production but I'm commenting it out so people can access the management page
+<cfif !session.keyExists("user") ||
+     (!session.keyExists("user") && !session.user.keyExists("isAdmin")) || 
+        (!session.user.isAdmin)>
+    <cflocation url="#cgi.SCRIPT_NAME.replace('management/','')#" />
+</cfif> --->
 <!DOCTYPE html> 
 <html lang="en"> 
     <head> 
