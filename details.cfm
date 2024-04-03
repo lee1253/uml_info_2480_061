@@ -36,7 +36,6 @@
     </cfoutput> 
 </cffunction>
 
-<!--- --->
 <cffunction name="manyResults">
     
 <ol class="nav flex-column">
