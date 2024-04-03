@@ -1,5 +1,18 @@
-component {
+/***
+ *
+ * This file handles all of the data processing for the inventory page ( called addEdit.cfm )
+ *
+ * @author Dan Card
+ * @date   2024-03-28
+ * */
 
+ component {
+
+	/***
+	 * Handles processing any new data which is submitted to the page, typically from the mainNav inventory form.
+	 *
+	 * @formData A structure containing all of the data needed to create or update the book.
+	 * */
 	function processForms( required struct formData ){
 		if ( formData.keyExists( "isbn13" ) && formData.isbn13.len() == 13 && formData.title.len() > 0 ) {
 			if ( formData.keyExists( "uploadImage" ) && formData.uploadImage.len() ) {
@@ -90,6 +103,11 @@ component {
 		}
 	}
 
+	/***
+	 *
+	 * Searches for books to edit fitting a criteria and returns the list
+	 *
+	 * */
 	function sideNavBooks( qTerm ){
 		if ( qTerm.len() == 0 ) {
 			return queryNew( "" );
@@ -105,6 +123,11 @@ component {
 		}
 	}
 
+	/***
+	 *
+	 * Searches the database for the details of a particular book in order to edit it
+	 *
+	 * */
 	function bookDetails( isbn13 ){
 		var qs = new query( datasource = application.dsource );
 		qs.setSql( "select * from books where isbn13=:isbn13" );
@@ -116,12 +139,22 @@ component {
 		return qs.execute().getResult();
 	}
 
+	/***
+	 *
+	 * Retrieves all the publishers in the database to populate the publishers select control
+	 *
+	 * */
 	function allPublishers(){
 		var qs = new query( datasource = application.dsource );
 		qs.setSql( "select * from publishers" );
 		return qs.execute().getResult();
 	}
 
+	/***
+	 *
+	 * Handle the upload of the book cover
+	 *
+	 * */
 	function uploadBookCover(){
 		var imageData = fileUpload(
 			expandPath( "../images/" ),
@@ -132,12 +165,25 @@ component {
 		return imageData.serverFile;
 	}
 
+	/***
+	 *
+	 * Returns all genres in our system to the UI in order to choose them for a book
+	 *
+	 **/
+
 	function allGenres( isbn13 ){
 		var qs = new query( datasource = application.dsource );
 		qs.setSql( "select * from genres order by name" );
 		return qs.execute().getResult();
 	}
 
+	/***
+	 *
+	 * Accepts the genreId and the Bookid (isbn13) and inserts them in to the genreToBooks Table
+	 *
+	 * @genreId
+	 * @bookId 
+	 **/
 	function insertGenre( genreId, bookId ){
 		var qs = new query( datasource = application.dsource );
 		qs.setSql( "insert into genreToBook (bookid, genreid) VALUES (:bookid, :genreid) " );
@@ -146,6 +192,12 @@ component {
 		qs.execute();
 	}
 
+	/***
+	 *
+	 * Removes all genres for a particular book from the system
+	 *
+	 * @bookId The ISBN13 of the book
+	 **/
 	function deleteAllBookGenres( bookId ){
 		var qs = new query( datasource = application.dsource );
 		qs.setSql( "delete from genreToBook WHERE bookId=:bookid " );
@@ -153,6 +205,12 @@ component {
 		qs.execute();
 	}
 
+	/***
+	 *
+	 * Accepts an ISBN13 and returns all of the genres in the system for that book
+	 *
+	 * @bookid The ISBN13 of the book
+	 **/
 	function bookGenres( bookId ){
 		var qs = new query( datasource = application.dsource );
 		qs.setSql( "select * from genreToBook where bookid=:bookId" );
